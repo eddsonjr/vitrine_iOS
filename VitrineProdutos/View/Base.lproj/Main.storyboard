@@ -61,7 +61,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
                                                                                 <rect key="frame" x="7" y="10" width="114" height="180"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             </imageView>
@@ -135,4 +135,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="interestellar" width="600" height="887"/>
+    </resources>
 </document>
