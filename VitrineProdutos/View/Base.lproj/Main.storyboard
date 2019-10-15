@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableviewCell" rowHeight="280" id="ROD-D2-SXH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableviewCell" rowHeight="280" id="ROD-D2-SXH" customClass="TableViewCell" customModule="VitrineProdutos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ROD-D2-SXH" id="3dS-Fs-b3P">
@@ -87,6 +87,10 @@
                                                 <constraint firstItem="GOA-ja-Gkh" firstAttribute="top" secondItem="3dS-Fs-b3P" secondAttribute="topMargin" constant="2" id="yjx-sH-5q8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Daf-49-3dH" id="zIz-ar-51R"/>
+                                            <outlet property="sectionNameLabel" destination="HCA-N0-f2a" id="K4m-6A-Waf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
