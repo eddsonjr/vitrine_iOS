@@ -28,3 +28,17 @@ class TableViewCell: UITableViewCell {
     }
 
 }
+
+
+extension TableViewCell {
+    
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
+        
+        collectionView.delegate = dataSourceDelegate
+        collectionView.dataSource = dataSourceDelegate
+
+        collectionView.reloadData()
+    }
+    
+    
+}

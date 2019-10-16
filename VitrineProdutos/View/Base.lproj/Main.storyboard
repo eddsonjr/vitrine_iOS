@@ -68,8 +68,15 @@
                                                                         </subviews>
                                                                     </view>
                                                                     <size key="customSize" width="128" height="200"/>
+                                                                    <connections>
+                                                                        <outlet property="imageView" destination="0da-xs-InD" id="mOw-LM-MEL"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="BYZ-38-t0r" id="crT-7W-kUM"/>
+                                                                <outlet property="delegate" destination="BYZ-38-t0r" id="KSw-rk-F41"/>
+                                                            </connections>
                                                         </collectionView>
                                                     </subviews>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -93,6 +100,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="WYB-dj-bWF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AeK-vA-PVq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
