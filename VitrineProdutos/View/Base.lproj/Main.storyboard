@@ -36,20 +36,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-49-3dH">
-                                                    <rect key="frame" x="0.0" y="32" width="375" height="317.5"/>
+                                                    <rect key="frame" x="0.0" y="50" width="375" height="300"/>
                                                     <color key="backgroundColor" red="0.79391825380000003" green="0.8172070696" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dw3-ED-sTv">
-                                                        <size key="itemSize" width="249" height="246"/>
+                                                        <size key="itemSize" width="141" height="210"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="collectionViewCell" id="4hg-vF-Fzp" customClass="CollectionViewCell" customModule="VitrineProdutos" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="36" width="249" height="246"/>
+                                                            <rect key="frame" x="0.0" y="45" width="141" height="210"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="249" height="246"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="141" height="210"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
@@ -58,7 +58,7 @@
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
-                                                            <size key="customSize" width="249" height="246"/>
+                                                            <size key="customSize" width="141" height="210"/>
                                                             <connections>
                                                                 <outlet property="imageView" destination="0da-xs-InD" id="mOw-LM-MEL"/>
                                                             </connections>
@@ -71,15 +71,17 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Daf-49-3dH" firstAttribute="top" secondItem="HCA-N0-f2a" secondAttribute="bottom" id="CCP-dG-7qK"/>
                                                 <constraint firstAttribute="trailing" secondItem="HCA-N0-f2a" secondAttribute="trailing" constant="15" id="SPg-aK-GcY"/>
-                                                <constraint firstAttribute="trailing" secondItem="Daf-49-3dH" secondAttribute="trailing" id="iqq-44-Dge"/>
                                                 <constraint firstItem="HCA-N0-f2a" firstAttribute="leading" secondItem="3dS-Fs-b3P" secondAttribute="leading" constant="15" id="jKq-hF-Uel"/>
                                                 <constraint firstItem="HCA-N0-f2a" firstAttribute="top" secondItem="3dS-Fs-b3P" secondAttribute="top" constant="11" id="qKU-IP-FYd"/>
-                                                <constraint firstItem="Daf-49-3dH" firstAttribute="leading" secondItem="3dS-Fs-b3P" secondAttribute="leading" id="rxc-nB-O0b"/>
-                                                <constraint firstAttribute="bottom" secondItem="Daf-49-3dH" secondAttribute="bottom" id="v0K-48-kvU"/>
+                                                <constraint firstItem="Daf-49-3dH" firstAttribute="top" secondItem="HCA-N0-f2a" secondAttribute="bottom" constant="18" id="sDG-pW-7i6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="Daf-49-3dH" firstAttribute="leading" secondItem="ROD-D2-SXH" secondAttribute="leading" id="aQg-Ha-kiK"/>
+                                            <constraint firstAttribute="bottom" secondItem="Daf-49-3dH" secondAttribute="bottom" id="paB-6Z-lwR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Daf-49-3dH" secondAttribute="trailing" id="wtq-z0-Iao"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="collectionView" destination="Daf-49-3dH" id="zIz-ar-51R"/>
                                             <outlet property="sectionNameLabel" destination="HCA-N0-f2a" id="K4m-6A-Waf"/>
