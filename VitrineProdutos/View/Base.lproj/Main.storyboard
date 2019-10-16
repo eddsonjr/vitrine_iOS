@@ -35,40 +35,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-49-3dH">
-                                                    <rect key="frame" x="15" y="40" width="345" height="209"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-49-3dH">
+                                                    <rect key="frame" x="0.0" y="32" width="375" height="317.5"/>
                                                     <color key="backgroundColor" red="0.79391825380000003" green="0.8172070696" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="209" id="Go1-Gt-dCt"/>
-                                                    </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dw3-ED-sTv">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="itemSize" width="249" height="246"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="collectionViewCell" id="4hg-vF-Fzp" customClass="CollectionViewCell" customModule="VitrineProdutos" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="4.5" width="128" height="200"/>
+                                                            <rect key="frame" x="0.0" y="36" width="249" height="246"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="249" height="246"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
                                                                         <rect key="frame" x="7" y="10" width="114" height="180"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="180" id="Tdj-w0-6Jr"/>
-                                                                            <constraint firstAttribute="width" constant="114" id="lXn-MJ-pXC"/>
-                                                                        </constraints>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
-                                                            <constraints>
-                                                                <constraint firstItem="0da-xs-InD" firstAttribute="centerX" secondItem="4hg-vF-Fzp" secondAttribute="centerX" id="7Fs-j6-Bs5"/>
-                                                                <constraint firstItem="0da-xs-InD" firstAttribute="centerY" secondItem="4hg-vF-Fzp" secondAttribute="centerY" id="RQ0-5C-axw"/>
-                                                            </constraints>
-                                                            <size key="customSize" width="128" height="200"/>
+                                                            <size key="customSize" width="249" height="246"/>
                                                             <connections>
                                                                 <outlet property="imageView" destination="0da-xs-InD" id="mOw-LM-MEL"/>
                                                             </connections>
@@ -81,12 +71,13 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Daf-49-3dH" firstAttribute="top" secondItem="HCA-N0-f2a" secondAttribute="bottom" constant="8" id="Aab-Ev-mzi"/>
-                                                <constraint firstAttribute="trailing" secondItem="Daf-49-3dH" secondAttribute="trailing" constant="15" id="PlH-xu-j3q"/>
+                                                <constraint firstItem="Daf-49-3dH" firstAttribute="top" secondItem="HCA-N0-f2a" secondAttribute="bottom" id="CCP-dG-7qK"/>
                                                 <constraint firstAttribute="trailing" secondItem="HCA-N0-f2a" secondAttribute="trailing" constant="15" id="SPg-aK-GcY"/>
-                                                <constraint firstItem="Daf-49-3dH" firstAttribute="leading" secondItem="3dS-Fs-b3P" secondAttribute="leading" constant="15" id="VMu-Fh-Shp"/>
+                                                <constraint firstAttribute="trailing" secondItem="Daf-49-3dH" secondAttribute="trailing" id="iqq-44-Dge"/>
                                                 <constraint firstItem="HCA-N0-f2a" firstAttribute="leading" secondItem="3dS-Fs-b3P" secondAttribute="leading" constant="15" id="jKq-hF-Uel"/>
                                                 <constraint firstItem="HCA-N0-f2a" firstAttribute="top" secondItem="3dS-Fs-b3P" secondAttribute="top" constant="11" id="qKU-IP-FYd"/>
+                                                <constraint firstItem="Daf-49-3dH" firstAttribute="leading" secondItem="3dS-Fs-b3P" secondAttribute="leading" id="rxc-nB-O0b"/>
+                                                <constraint firstAttribute="bottom" secondItem="Daf-49-3dH" secondAttribute="bottom" id="v0K-48-kvU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
