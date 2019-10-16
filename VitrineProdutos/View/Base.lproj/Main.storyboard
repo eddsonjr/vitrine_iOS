@@ -41,26 +41,33 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="209" id="Go1-Gt-dCt"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dw3-ED-sTv">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dw3-ED-sTv">
                                                         <size key="itemSize" width="50" height="50"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="4hg-vF-Fzp" customClass="CollectionViewCell" customModule="VitrineProdutos" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="collectionViewCell" id="4hg-vF-Fzp" customClass="CollectionViewCell" customModule="VitrineProdutos" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="4.5" width="128" height="200"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
                                                                         <rect key="frame" x="7" y="10" width="114" height="180"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="180" id="Tdj-w0-6Jr"/>
+                                                                            <constraint firstAttribute="width" constant="114" id="lXn-MJ-pXC"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
+                                                            <constraints>
+                                                                <constraint firstItem="0da-xs-InD" firstAttribute="centerX" secondItem="4hg-vF-Fzp" secondAttribute="centerX" id="7Fs-j6-Bs5"/>
+                                                                <constraint firstItem="0da-xs-InD" firstAttribute="centerY" secondItem="4hg-vF-Fzp" secondAttribute="centerY" id="RQ0-5C-axw"/>
+                                                            </constraints>
                                                             <size key="customSize" width="128" height="200"/>
                                                             <connections>
                                                                 <outlet property="imageView" destination="0da-xs-InD" id="mOw-LM-MEL"/>
