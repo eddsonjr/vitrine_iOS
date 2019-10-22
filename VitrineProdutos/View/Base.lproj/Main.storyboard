@@ -21,6 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-Za-m3x">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableviewCell" rowHeight="350" id="ROD-D2-SXH" customClass="TableViewCell" customModule="VitrineProdutos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="350"/>
@@ -29,15 +30,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCA-N0-f2a">
-                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-49-3dH">
-                                                    <rect key="frame" x="0.0" y="50" width="375" height="300"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dw3-ED-sTv">
                                                         <size key="itemSize" width="141" height="210"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -71,20 +66,16 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="HCA-N0-f2a" secondAttribute="trailing" constant="15" id="SPg-aK-GcY"/>
-                                                <constraint firstItem="HCA-N0-f2a" firstAttribute="leading" secondItem="3dS-Fs-b3P" secondAttribute="leading" constant="15" id="jKq-hF-Uel"/>
-                                                <constraint firstItem="HCA-N0-f2a" firstAttribute="top" secondItem="3dS-Fs-b3P" secondAttribute="top" constant="11" id="qKU-IP-FYd"/>
-                                                <constraint firstItem="Daf-49-3dH" firstAttribute="top" secondItem="HCA-N0-f2a" secondAttribute="bottom" constant="18" id="sDG-pW-7i6"/>
+                                                <constraint firstItem="Daf-49-3dH" firstAttribute="top" secondItem="3dS-Fs-b3P" secondAttribute="top" id="RGg-YZ-hCC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="Daf-49-3dH" firstAttribute="leading" secondItem="ROD-D2-SXH" secondAttribute="leading" id="aQg-Ha-kiK"/>
-                                            <constraint firstAttribute="bottom" secondItem="Daf-49-3dH" secondAttribute="bottom" id="paB-6Z-lwR"/>
+                                            <constraint firstAttribute="bottom" secondItem="Daf-49-3dH" secondAttribute="bottom" constant="50" id="paB-6Z-lwR"/>
                                             <constraint firstAttribute="trailing" secondItem="Daf-49-3dH" secondAttribute="trailing" id="wtq-z0-Iao"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="collectionView" destination="Daf-49-3dH" id="zIz-ar-51R"/>
-                                            <outlet property="sectionNameLabel" destination="HCA-N0-f2a" id="K4m-6A-Waf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
