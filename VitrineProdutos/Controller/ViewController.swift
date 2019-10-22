@@ -54,6 +54,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return 256
     }
     
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sectionsNames.count
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = self.sectionsNames[section]
+        return section
+    }
+    
+
+    
+    
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return 9
@@ -65,6 +81,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return collectionCell
     }
+    
+    
+    
+    
     
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
