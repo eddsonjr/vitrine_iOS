@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate{
     
 
     @IBOutlet var tableView: UITableView!
+    
+    
+    //SOMENTE PARA TESTE - DAO
+    var ref = DatabaseReference.init()
+    var categoriaRock: Categoria = Categoria()
+    var DAO: FirebaseDAO = FirebaseDAO()
+    
     
     //Somente para testes
     var sectionsNames = ["Rock","Clássicos","Musicais"]
@@ -23,6 +31,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        
+        
+        //Somente para testes - Setando os valores de categoria - SALVANDO DADOS NO FIREBASE
+        self.ref = Database.database().reference()
+        categoriaRock.nome = "Musicais"
+        categoriaRock.bannersURL = ["https: //s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
+        
+        DAO.saveFIRData(categoria: self.categoriaRock,ref: self.ref)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

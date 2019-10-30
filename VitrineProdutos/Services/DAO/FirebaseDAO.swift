@@ -12,28 +12,18 @@ import Firebase
 
 class FirebaseDAO {
     
-    var ref = DatabaseReference.init() //referencia para o banco de dados firebase
     let rootRef = "ListaCategorias"
     
     
     //Funcao para salvar dados no firebase
-    func saveFIRData(categoria: Categoria){
+    func saveFIRData(categoria: Categoria, ref: DatabaseReference){
         
         //Criando um dicionario com os dados do objeto categoria
         let dataDic = ["NomeCategoria" : categoria.nome, "bannersURLs" : categoria.bannersURL] as [String : Any]
     
         //salvando os dados propriamente ditos
-        self.ref.child(self.rootRef).setValue(dataDic)
+        ref.child(self.rootRef).setValue(dataDic)
     }
-    
-    
-    
-    //Inicializadores
-    init() {
-        self.ref = Database.database().reference()
-        
-    }
-    
     
     
 }
