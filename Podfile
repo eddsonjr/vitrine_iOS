@@ -7,5 +7,6 @@ target 'VitrineProdutos' do
 
   # Pods for VitrineProdutos
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
 end

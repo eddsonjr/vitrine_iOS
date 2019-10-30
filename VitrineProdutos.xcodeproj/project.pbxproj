@@ -14,6 +14,9 @@
 		AD9F37E223554D1D00CF14E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9F37E123554D1D00CF14E9 /* Assets.xcassets */; };
 		AD9F37E523554D1D00CF14E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F37E323554D1D00CF14E9 /* LaunchScreen.storyboard */; };
 		ADA4483D236A27C200C49A67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADA4483C236A27C200C49A67 /* GoogleService-Info.plist */; };
+		ADA4483F236A2A7800C49A67 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4483E236A2A7800C49A67 /* Categoria.swift */; };
+		ADA44843236A2C4C00C49A67 /* FirebaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA44842236A2C4C00C49A67 /* FirebaseDAO.swift */; };
+		ADA44845236A2EFC00C49A67 /* JsonTest in Resources */ = {isa = PBXBuildFile; fileRef = ADA44844236A2EFC00C49A67 /* JsonTest */; };
 		ADBB1E93235554DD0009E11D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB1E92235554DD0009E11D /* TableViewCell.swift */; };
 		ADBB1E95235556350009E11D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB1E94235556350009E11D /* CollectionViewCell.swift */; };
 		ADBB1E9823555A460009E11D /* link.txt in Resources */ = {isa = PBXBuildFile; fileRef = ADBB1E9723555A460009E11D /* link.txt */; };
@@ -30,6 +33,9 @@
 		AD9F37E423554D1D00CF14E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD9F37E623554D1D00CF14E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADA4483C236A27C200C49A67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ADA4483E236A2A7800C49A67 /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
+		ADA44842236A2C4C00C49A67 /* FirebaseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDAO.swift; sourceTree = "<group>"; };
+		ADA44844236A2EFC00C49A67 /* JsonTest */ = {isa = PBXFileReference; lastKnownFileType = text; path = JsonTest; sourceTree = "<group>"; };
 		ADBB1E92235554DD0009E11D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E94235556350009E11D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E9723555A460009E11D /* link.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.txt; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		AD9F37D923554D1C00CF14E9 /* VitrineProdutos */ = {
 			isa = PBXGroup;
 			children = (
+				ADA44840236A2C2000C49A67 /* Services */,
 				ADBB1E9623555A1E0009E11D /* SupportFiles */,
 				ADBB1E8F235554120009E11D /* Model */,
 				ADBB1E8E235554000009E11D /* View */,
@@ -88,6 +95,22 @@
 				AD9F37E623554D1D00CF14E9 /* Info.plist */,
 			);
 			path = VitrineProdutos;
+			sourceTree = "<group>";
+		};
+		ADA44840236A2C2000C49A67 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ADA44841236A2C3000C49A67 /* DAO */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ADA44841236A2C3000C49A67 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				ADA44842236A2C4C00C49A67 /* FirebaseDAO.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		ADBB1E8D235553F30009E11D /* Controller */ = {
@@ -111,6 +134,7 @@
 		ADBB1E8F235554120009E11D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ADA4483E236A2A7800C49A67 /* Categoria.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				ADBB1E9723555A460009E11D /* link.txt */,
+				ADA44844236A2EFC00C49A67 /* JsonTest */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -202,6 +227,7 @@
 			files = (
 				ADBB1E9823555A460009E11D /* link.txt in Resources */,
 				AD9F37E523554D1D00CF14E9 /* LaunchScreen.storyboard in Resources */,
+				ADA44845236A2EFC00C49A67 /* JsonTest in Resources */,
 				ADA4483D236A27C200C49A67 /* GoogleService-Info.plist in Resources */,
 				AD9F37E223554D1D00CF14E9 /* Assets.xcassets in Resources */,
 				AD9F37E023554D1C00CF14E9 /* Main.storyboard in Resources */,
@@ -237,11 +263,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,9 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBB1E93235554DD0009E11D /* TableViewCell.swift in Sources */,
+				ADA44843236A2C4C00C49A67 /* FirebaseDAO.swift in Sources */,
 				AD9F37DD23554D1C00CF14E9 /* ViewController.swift in Sources */,
 				ADBB1E95235556350009E11D /* CollectionViewCell.swift in Sources */,
 				AD9F37DB23554D1C00CF14E9 /* AppDelegate.swift in Sources */,
+				ADA4483F236A2A7800C49A67 /* Categoria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
