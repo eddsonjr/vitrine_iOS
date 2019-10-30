@@ -29,3 +29,23 @@ https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg
 
 tutorial collectionView inside tableview:
     https://www.youtube.com/watch?v=ArzE1bZssQM
+
+
+
+
+
+#Documentacao do firebase - Integracao com app e utilizacao:
+https://firebase.google.com/docs/firestore/quickstart?authuser=0
+
+https://firebase.google.com/docs/database/web/structure-data?hl=pt-BR
+https://www.tutorialspoint.com/firebase/firebase_overview.htm
+
+https://www.raywenderlich.com/3-firebase-tutorial-getting-started
+
+
+Autenticacao do banco:
+com.edsonjr.iOSVitrineTest - Apelido: Vitrine
+
+
+
+

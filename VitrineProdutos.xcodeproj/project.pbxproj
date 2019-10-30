@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373AD0D2E66CCD8FE8320D10 /* Pods_VitrineProdutos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F598D3867031A9089E506F80 /* Pods_VitrineProdutos.framework */; };
 		AD9F37DB23554D1C00CF14E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F37DA23554D1C00CF14E9 /* AppDelegate.swift */; };
 		AD9F37DD23554D1C00CF14E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F37DC23554D1C00CF14E9 /* ViewController.swift */; };
 		AD9F37E023554D1C00CF14E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F37DE23554D1C00CF14E9 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64554031070AF8B55E2513AF /* Pods-VitrineProdutos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitrineProdutos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos.debug.xcconfig"; sourceTree = "<group>"; };
+		987543AB6A687F8D62DE63DC /* Pods-VitrineProdutos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitrineProdutos.release.xcconfig"; path = "Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos.release.xcconfig"; sourceTree = "<group>"; };
 		AD9F37D723554D1C00CF14E9 /* VitrineProdutos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitrineProdutos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9F37DA23554D1C00CF14E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD9F37DC23554D1C00CF14E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		ADBB1E92235554DD0009E11D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E94235556350009E11D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E9723555A460009E11D /* link.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.txt; sourceTree = "<group>"; };
+		F598D3867031A9089E506F80 /* Pods_VitrineProdutos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VitrineProdutos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373AD0D2E66CCD8FE8320D10 /* Pods_VitrineProdutos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88184B3913082216FED60CA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64554031070AF8B55E2513AF /* Pods-VitrineProdutos.debug.xcconfig */,
+				987543AB6A687F8D62DE63DC /* Pods-VitrineProdutos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AD9F37CE23554D1C00CF14E9 = {
 			isa = PBXGroup;
 			children = (
 				AD9F37D923554D1C00CF14E9 /* VitrineProdutos */,
 				AD9F37D823554D1C00CF14E9 /* Products */,
+				88184B3913082216FED60CA4 /* Pods */,
+				C2A69C8BAFCB13BBE6CC7D25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +129,14 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		C2A69C8BAFCB13BBE6CC7D25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F598D3867031A9089E506F80 /* Pods_VitrineProdutos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD9F37E923554D1D00CF14E9 /* Build configuration list for PBXNativeTarget "VitrineProdutos" */;
 			buildPhases = (
+				44C371D7745E7620059F1C93 /* [CP] Check Pods Manifest.lock */,
 				AD9F37D323554D1C00CF14E9 /* Sources */,
 				AD9F37D423554D1C00CF14E9 /* Frameworks */,
 				AD9F37D523554D1C00CF14E9 /* Resources */,
+				B679FCBB8518FE36C7C14F13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +205,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44C371D7745E7620059F1C93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VitrineProdutos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B679FCBB8518FE36C7C14F13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD9F37D323554D1C00CF14E9 /* Sources */ = {
@@ -330,6 +405,7 @@
 		};
 		AD9F37EA23554D1D00CF14E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64554031070AF8B55E2513AF /* Pods-VitrineProdutos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -351,6 +427,7 @@
 		};
 		AD9F37EB23554D1D00CF14E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 987543AB6A687F8D62DE63DC /* Pods-VitrineProdutos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
