@@ -8,10 +8,17 @@
 
 import Foundation
 
-class Categoria {
+class Categoria{
     
-    var nome: String!
-    var bannersURL: [String]!
+    var nome: String?
+    var bannersURL: [String]?
+    
+    
+    //construtor
+    init(nome: String?, bannersURL: [String]?) {
+        self.nome = nome
+        self.bannersURL = bannersURL
+    }
     
 }
 

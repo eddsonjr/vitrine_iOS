@@ -43,7 +43,7 @@ https://www.tutorialspoint.com/firebase/firebase_overview.htm
 https://www.raywenderlich.com/3-firebase-tutorial-getting-started
 
 https://www.youtube.com/watch?v=KEubRO8VPWA
-
+https://stackoverflow.com/questions/53520757/parse-data-json-from-firebase-swift
 
 Autenticacao do banco:
 com.edsonjr.iOSVitrineTest - Apelido: Vitrine
