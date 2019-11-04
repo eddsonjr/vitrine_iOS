@@ -20,6 +20,8 @@ class Categoria{
         self.bannersURL = bannersURL
     }
     
+    
+    init() {}
 }
 
 

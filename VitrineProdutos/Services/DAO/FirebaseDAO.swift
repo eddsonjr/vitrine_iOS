@@ -12,9 +12,9 @@ import Firebase
 
 class FirebaseDAO {
     
+    let TAG = "[FirebaseDAO]: "
     let rootRef = "ListaCategorias"
-    
-    
+
     //Funcao para salvar dados no firebase
     func saveFIRData(categoria: Categoria, ref: DatabaseReference){
         
@@ -29,7 +29,10 @@ class FirebaseDAO {
     
     
     //Funcao para retornar todos os dados
-    func retrieveAllData(ref: DatabaseReference) -> Array<Categoria> {
+    func retrieveAllData(ref: DatabaseReference) -> Array<Categoria>? {
+       
+        var categoriaList: Array<Categoria>?
+        
         ref.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() {
@@ -37,26 +40,33 @@ class FirebaseDAO {
                 return }
             
             let jsonFromFirebase = snapshot.value!
-            var categoriaList: Array<Categoria>?
+            
             print(jsonFromFirebase)
             
             //Realizando a codificacao de json to object
             if let arrayData = snapshot.value as? [[String: Any]] {
                 for valueInArray in arrayData {
-                    let categoriaNome = valueInArray["NomeCategoria"] as! String ?? ""
+                    let categoriaNome = valueInArray["NomeCategoria"] as! String ?? nil
                     let bannersUrls = valueInArray["bannersURLs"] as! [String] ?? nil
                     
-                    //Criando um objeto com os dados retornados do banco de dados
-                    var categoria = Categoria(nome: categoriaNome, bannersURL: bannersUrls)
                     
-                    //adicionando o objeto a lista de categorias
-                    categoriaList?.append(categoria)
+                    //Somente cria um objeto do tipo categoria se o nome e a lista de banners nao for null
                     
-             
+                    if((categoriaNome != nil) && (bannersUrls != nil)) {
+
+                        //Criando um objeto com os dados retornados do banco de dados
+                        var categoria = Categoria(nome: categoriaNome, bannersURL: bannersUrls)
+                        
+                        //adicionando o objeto a lista de categorias
+                        categoriaList?.append(categoria)
+                    }
                 }
             }
-           return categoriaList
+           
         })
+        
+        print(TAG + "parsed \(categoriaList?.count) elements form JSON")
+        return categoriaList
     }
     
     
