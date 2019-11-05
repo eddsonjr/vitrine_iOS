@@ -13,3 +13,33 @@
 //
 //
 //       DAO.saveFIRData(categoria: self.categoriaRock,ref: self.ref)
+
+
+
+
+
+
+---------------------
+
+
+//Realizando a codificacao de json to object
+if let arrayData = snapshot.value as? [[String: Any]] {
+for valueInArray in arrayData {
+let categoriaNome = valueInArray["NomeCategoria"] as! String ?? nil
+let bannersUrls = valueInArray["bannersURLs"] as! [String] ?? nil
+
+//Somente cria um objeto do tipo categoria se o nome e a lista de banners nao for null
+if((categoriaNome != nil) && (bannersUrls != nil)) {
+
+//Criando um objeto com os dados retornados do banco de dados
+var categoria = Categoria(nome: categoriaNome, bannersURL: bannersUrls)
+
+//adicionando o objeto a lista de categorias
+categoriaList?.append(categoria)
+
+}
+}
+DispatchQueue.main.async {
+completionHandler(categoriaList)
+}
+}

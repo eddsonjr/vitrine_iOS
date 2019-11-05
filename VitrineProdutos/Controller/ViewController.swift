@@ -42,7 +42,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         //DAO.retrieveAllData(ref: self.ref, completionHandler: )
-        DAO.retrieveAllData(ref: self.ref) { (categoriasLista) in
+        DAO.retrieveAllData(ref: self.ref.child("ListaCategorias")) { (categoriasLista) in
             print("AQUI CARALHO.....")
             print("Quantidade do caralho das categorias: \(categoriasLista?.count)")
         }

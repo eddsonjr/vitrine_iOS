@@ -28,54 +28,41 @@ class FirebaseDAO {
     
     
     
+    
+    
+    
+    
     //Funcao para retornar todos os dados
     func retrieveAllData(ref: DatabaseReference, completionHandler: @escaping ([Categoria]?)->()) {
     
-        
-        var categoriaList: Array<Categoria>?
+        var categoriaList: Array<Categoria>? = []
         ref.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() {
-                print("ERROR: Data not found")
+                print(self.TAG  + "ERROR: Data not found or cannot download")
                 return }
             
             let jsonFromFirebase = snapshot.value!
-            
             print(self.TAG)
             print(jsonFromFirebase)
-            print(self.TAG + "\(snapshot)")
             
-            //Realizando a codificacao de json to object
-            if let arrayData = snapshot.value as? [[String: Any]] {
-                for valueInArray in arrayData {
-                    let categoriaNome = valueInArray["NomeCategoria"] as! String ?? nil
-                    let bannersUrls = valueInArray["bannersURLs"] as! [String] ?? nil
-                    
-                    //Somente cria um objeto do tipo categoria se o nome e a lista de banners nao for null
-                    if((categoriaNome != nil) && (bannersUrls != nil)) {
-
-                        //Criando um objeto com os dados retornados do banco de dados
-                        var categoria = Categoria(nome: categoriaNome, bannersURL: bannersUrls)
-                        
-                        //adicionando o objeto a lista de categorias
-                        categoriaList?.append(categoria)
-                        
-                    }
-                }
-                DispatchQueue.main.async {
-                    completionHandler(categoriaList)
-                }
+            for categoria in snapshot.children.allObjects as! [DataSnapshot] {
+                //adquirindo os dados e fazendo parser
+                let dict = categoria.value as? [String:Any]
+                let nomeCategoria = dict!["NomeCategoria"] as! String
+                let bannerURLs = dict!["bannersURLs"] as! [String]
+                
+                let categoria = Categoria(nome: nomeCategoria, bannersURL: bannerURLs)
+                print(self.TAG + "Categoria: \(categoria.nome) | \(categoria.bannersURL)")
+                
+                categoriaList?.append(categoria)
             }
             
+            DispatchQueue.main.async {
+                completionHandler(categoriaList)
+            }
         })
+        
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
