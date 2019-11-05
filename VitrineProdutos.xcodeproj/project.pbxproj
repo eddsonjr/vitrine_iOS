@@ -20,6 +20,7 @@
 		ADBB1E93235554DD0009E11D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB1E92235554DD0009E11D /* TableViewCell.swift */; };
 		ADBB1E95235556350009E11D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB1E94235556350009E11D /* CollectionViewCell.swift */; };
 		ADBB1E9823555A460009E11D /* link.txt in Resources */ = {isa = PBXBuildFile; fileRef = ADBB1E9723555A460009E11D /* link.txt */; };
+		ADF7D5492370EE240009B790 /* some_codes in Resources */ = {isa = PBXBuildFile; fileRef = ADF7D5482370EE240009B790 /* some_codes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		ADBB1E92235554DD0009E11D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E94235556350009E11D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E9723555A460009E11D /* link.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.txt; sourceTree = "<group>"; };
+		ADF7D5482370EE240009B790 /* some_codes */ = {isa = PBXFileReference; lastKnownFileType = text; path = some_codes; sourceTree = "<group>"; };
 		F598D3867031A9089E506F80 /* Pods_VitrineProdutos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VitrineProdutos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			children = (
 				ADBB1E9723555A460009E11D /* link.txt */,
 				ADA44844236A2EFC00C49A67 /* JsonTest */,
+				ADF7D5482370EE240009B790 /* some_codes */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF7D5492370EE240009B790 /* some_codes in Resources */,
 				ADBB1E9823555A460009E11D /* link.txt in Resources */,
 				AD9F37E523554D1D00CF14E9 /* LaunchScreen.storyboard in Resources */,
 				ADA44845236A2EFC00C49A67 /* JsonTest in Resources */,

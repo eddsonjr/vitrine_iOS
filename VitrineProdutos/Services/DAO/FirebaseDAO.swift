@@ -29,10 +29,10 @@ class FirebaseDAO {
     
     
     //Funcao para retornar todos os dados
-    func retrieveAllData(ref: DatabaseReference) -> Array<Categoria>? {
-       
-        var categoriaList: Array<Categoria>?
+    func retrieveAllData(ref: DatabaseReference, completionHandler: @escaping ([Categoria]?)->()) {
+    
         
+        var categoriaList: Array<Categoria>?
         ref.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() {
@@ -41,7 +41,9 @@ class FirebaseDAO {
             
             let jsonFromFirebase = snapshot.value!
             
+            print(self.TAG)
             print(jsonFromFirebase)
+            print(self.TAG + "\(snapshot)")
             
             //Realizando a codificacao de json to object
             if let arrayData = snapshot.value as? [[String: Any]] {
@@ -49,9 +51,7 @@ class FirebaseDAO {
                     let categoriaNome = valueInArray["NomeCategoria"] as! String ?? nil
                     let bannersUrls = valueInArray["bannersURLs"] as! [String] ?? nil
                     
-                    
                     //Somente cria um objeto do tipo categoria se o nome e a lista de banners nao for null
-                    
                     if((categoriaNome != nil) && (bannersUrls != nil)) {
 
                         //Criando um objeto com os dados retornados do banco de dados
@@ -59,14 +59,15 @@ class FirebaseDAO {
                         
                         //adicionando o objeto a lista de categorias
                         categoriaList?.append(categoria)
+                        
                     }
                 }
+                DispatchQueue.main.async {
+                    completionHandler(categoriaList)
+                }
             }
-           
+            
         })
-        
-        print(TAG + "parsed \(categoriaList?.count) elements form JSON")
-        return categoriaList
     }
     
     

@@ -38,25 +38,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Somente para testes - Setando os valores de categoria - SALVANDO DADOS NO FIREBASE
         self.ref = Database.database().reference()
         
-        
-        //Categoria de Musicais
-//        categoriaMusicais.nome = "Musicais"
-//        categoriaMusicais.bannersURL = ["https://www.panicposters.com/media/catalog/product/cache/1/image/600x887.57396449704/9df78eab33525d08d6e5fb8d27136e95/f/i/file_25_4.jpg",
-//                                    "https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg"]
-//
-//        DAO.saveFIRData(categoria: self.categoriaMusicais,ref: self.ref)
-//
-//
-//        //Categoria de rock
-//        categoriaRock.nome = "Rock"
-//        categoriaRock.bannersURL = ["https: //s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
-//
-//
-//       DAO.saveFIRData(categoria: self.categoriaRock,ref: self.ref)
+     
         
         
-        DAO.retrieveAllData(ref: self.ref)
-        
+        //DAO.retrieveAllData(ref: self.ref, completionHandler: )
+        DAO.retrieveAllData(ref: self.ref) { (categoriasLista) in
+            print("AQUI CARALHO.....")
+            print("Quantidade do caralho das categorias: \(categoriasLista?.count)")
+        }
         
     }
 
