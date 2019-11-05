@@ -21,6 +21,7 @@
 		ADBB1E95235556350009E11D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB1E94235556350009E11D /* CollectionViewCell.swift */; };
 		ADBB1E9823555A460009E11D /* link.txt in Resources */ = {isa = PBXBuildFile; fileRef = ADBB1E9723555A460009E11D /* link.txt */; };
 		ADF7D5492370EE240009B790 /* some_codes in Resources */ = {isa = PBXBuildFile; fileRef = ADF7D5482370EE240009B790 /* some_codes */; };
+		ADF7D54C2371029F0009B790 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D54B2371029F0009B790 /* UIImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		ADBB1E94235556350009E11D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ADBB1E9723555A460009E11D /* link.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.txt; sourceTree = "<group>"; };
 		ADF7D5482370EE240009B790 /* some_codes */ = {isa = PBXFileReference; lastKnownFileType = text; path = some_codes; sourceTree = "<group>"; };
+		ADF7D54B2371029F0009B790 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		F598D3867031A9089E506F80 /* Pods_VitrineProdutos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VitrineProdutos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 		AD9F37D923554D1C00CF14E9 /* VitrineProdutos */ = {
 			isa = PBXGroup;
 			children = (
+				ADF7D54A2371028A0009B790 /* Extensions */,
 				ADA44840236A2C2000C49A67 /* Services */,
 				ADBB1E9623555A1E0009E11D /* SupportFiles */,
 				ADBB1E8F235554120009E11D /* Model */,
@@ -158,6 +161,14 @@
 				ADF7D5482370EE240009B790 /* some_codes */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		ADF7D54A2371028A0009B790 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ADF7D54B2371029F0009B790 /* UIImageExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C2A69C8BAFCB13BBE6CC7D25 /* Frameworks */ = {
@@ -290,6 +301,7 @@
 			files = (
 				ADBB1E93235554DD0009E11D /* TableViewCell.swift in Sources */,
 				ADA44843236A2C4C00C49A67 /* FirebaseDAO.swift in Sources */,
+				ADF7D54C2371029F0009B790 /* UIImageExtensions.swift in Sources */,
 				AD9F37DD23554D1C00CF14E9 /* ViewController.swift in Sources */,
 				ADBB1E95235556350009E11D /* CollectionViewCell.swift in Sources */,
 				AD9F37DB23554D1C00CF14E9 /* AppDelegate.swift in Sources */,

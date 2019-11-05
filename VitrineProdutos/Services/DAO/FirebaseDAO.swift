@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 
 class FirebaseDAO {
@@ -55,6 +56,11 @@ class FirebaseDAO {
                 let categoria = Categoria(nome: nomeCategoria, bannersURL: bannerURLs)
                 print(self.TAG + "Categoria: \(categoria.nome) | \(categoria.bannersURL)")
                 
+//                let imgDownloaded = self.imageDownloader(url: URL(string: bannerURLs.first!)!)
+                var imgDownloaded: UIImage? = UIImage()
+                let url = URL(string: "https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg")
+                imgDownloaded = self.imageDownloader(url: url!)
+                
                 categoriaList?.append(categoria)
             }
             
@@ -62,7 +68,24 @@ class FirebaseDAO {
                 completionHandler(categoriaList)
             }
         })
-        
-        
     }
+    
+    
+    
+    
+    
+    
+    func imageDownloader(url: URL) -> UIImage{
+        
+        var img = UIImage()
+        DispatchQueue.main.async {
+            print("OVER HERE")
+            if let data = try? Data(contentsOf: url){
+                img = UIImage(data: data)!
+                
+            }
+        }
+        return img
+    }
+    
 }

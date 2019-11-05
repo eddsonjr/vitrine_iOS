@@ -11,8 +11,7 @@ import Foundation
 class Categoria{
     
     var nome: String?
-    var bannersURL: [String]?
-    
+    var bannersURL: [String]?    
     
     //construtor - init
     init(nome: String?, bannersURL: [String]?) {

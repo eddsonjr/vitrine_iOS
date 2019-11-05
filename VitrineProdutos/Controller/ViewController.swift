@@ -20,7 +20,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var ref = DatabaseReference.init()
     var DAO: FirebaseDAO = FirebaseDAO()
     
-    
     var listaDeCategorias: Array<Categoria>? = []
     
     
@@ -36,14 +35,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Somente para testes - Setando os valores de categoria - SALVANDO DADOS NO FIREBASE
         self.ref = Database.database().reference()
         
-     
-        
         
         //DAO.retrieveAllData(ref: self.ref, completionHandler: )
         DAO.retrieveAllData(ref: self.ref.child("ListaCategorias")) { (categoriasLista) in
             print("Retornado do banco: \(categoriasLista?.count)")
             self.listaDeCategorias = categoriasLista
             self.tableView.reloadData()
+            
+            
             
         }
         
@@ -56,7 +55,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     //MARK: tableview datasource and delegate
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  1
     }
@@ -69,7 +67,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.delegate = self
         cell.collectionView.dataSource = self
         cell.collectionView.reloadData()
-    
+        
         
         return cell
     }
@@ -107,20 +105,5 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return collectionCell
     }
-    
-    
-    
-    
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: ((self.view.frame.size.width/2) + 16), height: 450)
-//    }
-    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        return CGSize(width: 192, height: 210)
-//    }
-//    
-
 }
 
