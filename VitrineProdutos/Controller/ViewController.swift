@@ -69,7 +69,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.delegate = self
         cell.collectionView.dataSource = self
         cell.collectionView.reloadData()
-        
+    
         
         return cell
     }
