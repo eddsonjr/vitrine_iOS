@@ -14,14 +14,17 @@ class Categoria{
     var bannersURL: [String]?
     
     
-    //construtor
+    //construtor - init
     init(nome: String?, bannersURL: [String]?) {
         self.nome = nome
         self.bannersURL = bannersURL
     }
     
     
-    init() {}
+    //default init - sem parametros
+    init() {
+        
+    }
 }
 
 

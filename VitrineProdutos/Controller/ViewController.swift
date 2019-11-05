@@ -18,13 +18,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //SOMENTE PARA TESTE - DAO
     var ref = DatabaseReference.init()
-    var categoriaMusicais: Categoria = Categoria()
-    var categoriaRock: Categoria = Categoria()
     var DAO: FirebaseDAO = FirebaseDAO()
     
     
-    //Somente para testes
-    var sectionsNames = ["Rock","Clássicos","Musicais"]
+    var listaDeCategorias: Array<Categoria>? = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +41,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //DAO.retrieveAllData(ref: self.ref, completionHandler: )
         DAO.retrieveAllData(ref: self.ref.child("ListaCategorias")) { (categoriasLista) in
-            print("AQUI CARALHO.....")
-            print("Quantidade do caralho das categorias: \(categoriasLista?.count)")
+            print("Retornado do banco: \(categoriasLista?.count)")
+            self.listaDeCategorias = categoriasLista
+            self.tableView.reloadData()
+            
         }
         
     }
@@ -82,14 +82,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.sectionsNames.count
+        return self.listaDeCategorias!.count
     }
     
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = self.sectionsNames[section]
-        return section
+        let sectionName = self.listaDeCategorias![section].nome
+        return sectionName
     }
     
 
@@ -97,7 +97,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 9
+        var itens = self.listaDeCategorias![section].bannersURL?.count
+        return itens!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
