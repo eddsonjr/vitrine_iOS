@@ -55,6 +55,8 @@ class FirebaseDAO {
                 
                 let categoria = Categoria(nome: nomeCategoria, bannersURL: bannerURLs)
                 print(self.TAG + "Categoria: \(categoria.nome) | \(categoria.bannersURL)")
+                
+                
 
                 categoriaList?.append(categoria)
             }

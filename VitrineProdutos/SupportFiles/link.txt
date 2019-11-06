@@ -51,3 +51,10 @@ com.edsonjr.iOSVitrineTest - Apelido: Vitrine
 
 
 
+
+#Collectionview e uitableview
+https://stackoverflow.com/questions/51354429/collectionview-in-tableview-cell-swift4
+
+
+
+

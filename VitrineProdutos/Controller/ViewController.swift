@@ -22,6 +22,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     var listaDeCategorias: Array<Categoria>? = []
     
+    var n = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         DAO.retrieveAllData(ref: self.ref.child("ListaCategorias")) { (categoriasLista) in
-            print("Retornado do banco: \(categoriasLista?.count)")
+            print("Retornado do banco qt. elementos: \(categoriasLista?.count)")
             self.listaDeCategorias = categoriasLista
             self.tableView.reloadData()
 
@@ -64,7 +66,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         cell.collectionView.delegate = self
         cell.collectionView.dataSource = self
+        cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
+        
+        self.n = (self.listaDeCategorias![indexPath.row].bannersURL?.count)!
         
         return cell
     }
@@ -92,10 +97,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        let itens = self.listaDeCategorias![section].bannersURL?.count
-        print("ITENS: \(itens) | SECTION: \(section)")
-        return itens!
+//        let numeroElementos = (self.listaDeCategorias![collectionView.tag].bannersURL?.count)!
+//        print("SECAO: \(section)")
+//        print("Numero de elementos por secao: \(numeroElementos)")
+//
+//        return numeroElementos
+        
+        return self.n
     }
+    
+    
     
     
     
@@ -103,11 +114,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
-        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
-        for banner in listaBannersCategoria.bannersURL! {
-            print("CARREGANDO BANNER: \(banner)")
-            collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
-        }
+//        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
+//        for banner in listaBannersCategoria.bannersURL! {
+//            collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
+//        }
         
         
         
