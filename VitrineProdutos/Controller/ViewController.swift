@@ -68,7 +68,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.dataSource = self
         cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
-       // self.n = (self.listaDeCategorias![indexPath.row].bannersURL?.capacity)!
+        self.listaDeCategorias![indexPath.row].toString()
 
         return cell
     }

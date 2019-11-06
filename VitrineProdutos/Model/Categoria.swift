@@ -24,6 +24,13 @@ class Categoria{
     init() {
         
     }
+    
+    func toString(){
+        print("Dados desta categoria...")
+        print("Nome: \(self.nome)")
+        print("Numero de banners: \(self.bannersURL?.count)")
+        print("Banners: \(self.bannersURL)")
+    }
 }
 
 
