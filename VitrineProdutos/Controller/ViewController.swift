@@ -100,6 +100,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
+//        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
+//        for banner in listaBannersCategoria.bannersURL! {
+//            collectionCell.imageView.load(url: URL(string: banner)!)
+//        }
+        
+        
         
         return collectionCell
     }
