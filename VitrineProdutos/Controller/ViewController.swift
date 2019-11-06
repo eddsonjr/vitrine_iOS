@@ -22,7 +22,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     var listaDeCategorias: Array<Categoria>? = []
     
-    var n = 0
+    var n = -1
     
     
     override func viewDidLoad() {
@@ -68,9 +68,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.dataSource = self
         cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
-        
-        self.n = (self.listaDeCategorias![indexPath.row].bannersURL?.count)!
-        
+
         return cell
     }
     
@@ -97,27 +95,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-//        let numeroElementos = (self.listaDeCategorias![collectionView.tag].bannersURL?.count)!
-//        print("SECAO: \(section)")
-//        print("Numero de elementos por secao: \(numeroElementos)")
-//
-//        return numeroElementos
-        
-        return self.n
+        let numeroElementos = (self.listaDeCategorias![collectionView.tag].bannersURL?.count)!
+        print("SECAO: \(section)")
+        print("Numero de elementos por secao: \(numeroElementos)")
+
+        return numeroElementos
     }
-    
-    
-    
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
-//        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
-//        for banner in listaBannersCategoria.bannersURL! {
-//            collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
-//        }
+        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
+        for banner in listaBannersCategoria.bannersURL! {
+            collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
+        }
         
         
         
