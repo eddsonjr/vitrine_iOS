@@ -9,7 +9,7 @@
 //
 //        //Categoria de rock
 //        categoriaRock.nome = "Rock"
-//        categoriaRock.bannersURL = ["https: //s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
+//        categoriaRock.bannersURL = ["https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
 //
 //
 //       DAO.saveFIRData(categoria: self.categoriaRock,ref: self.ref)

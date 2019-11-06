@@ -31,19 +31,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.delegate = self
         
         
-        
         //Somente para testes - Setando os valores de categoria - SALVANDO DADOS NO FIREBASE
         self.ref = Database.database().reference()
         
         
-        //DAO.retrieveAllData(ref: self.ref, completionHandler: )
         DAO.retrieveAllData(ref: self.ref.child("ListaCategorias")) { (categoriasLista) in
             print("Retornado do banco: \(categoriasLista?.count)")
             self.listaDeCategorias = categoriasLista
             self.tableView.reloadData()
-            
-            
-            
+
+
+
         }
         
     }
@@ -104,6 +102,30 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         return collectionCell
+    }
+    
+    
+    
+    //Funcao somente para testes()
+    func saveDataOnDataBase(){
+        var categoriaMusical = Categoria()
+        var categoriaRock = Categoria()
+        
+        
+        categoriaMusical.nome = "Musicais"
+        categoriaMusical.bannersURL = ["https://www.panicposters.com/media/catalog/product/cache/1/image/600x887.57396449704/9df78eab33525d08d6e5fb8d27136e95/f/i/file_25_4.jpg",
+            "https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg"]
+        
+        
+        categoriaRock.nome = "Rock"
+        categoriaRock.bannersURL = ["https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
+        
+        
+        //salvando no banco
+        DAO.saveFIRData(categoria: categoriaMusical,ref: self.ref)
+        DAO.saveFIRData(categoria: categoriaRock,ref: self.ref)
+        
+        
     }
 }
 
