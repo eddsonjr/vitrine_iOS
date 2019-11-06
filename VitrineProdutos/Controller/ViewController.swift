@@ -66,7 +66,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.dataSource = self
         cell.collectionView.reloadData()
         
-        
         return cell
     }
     
@@ -93,17 +92,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        var itens = self.listaDeCategorias![section].bannersURL?.count
+        let itens = self.listaDeCategorias![section].bannersURL?.count
+        print("ITENS: \(itens) | SECTION: \(section)")
         return itens!
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
-//        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
-//        for banner in listaBannersCategoria.bannersURL! {
-//            collectionCell.imageView.load(url: URL(string: banner)!)
-//        }
+        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
+        for banner in listaBannersCategoria.bannersURL! {
+            print("CARREGANDO BANNER: \(banner)")
+            collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
+        }
         
         
         

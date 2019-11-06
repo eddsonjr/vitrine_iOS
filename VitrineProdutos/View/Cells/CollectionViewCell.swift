@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView: CustomImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

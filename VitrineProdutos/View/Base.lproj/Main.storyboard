@@ -47,7 +47,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="141" height="210"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interestellar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-xs-InD" customClass="CustomImageView" customModule="VitrineProdutos" customModuleProvider="target">
                                                                         <rect key="frame" x="7" y="7" width="127" height="196"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
