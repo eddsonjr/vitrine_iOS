@@ -22,7 +22,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     var listaDeCategorias: Array<Categoria>? = []
     
-    var n = -1
+    var n = 1
     
     
     override func viewDidLoad() {
@@ -68,6 +68,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.dataSource = self
         cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
+       // self.n = (self.listaDeCategorias![indexPath.row].bannersURL?.capacity)!
 
         return cell
     }
