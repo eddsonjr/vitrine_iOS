@@ -22,7 +22,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     var listaDeCategorias: Array<Categoria>? = []
     
-    var n = 1
+    var atualCategoriaIndex = 0
     
     
     override func viewDidLoad() {
@@ -68,7 +68,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.collectionView.dataSource = self
         cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
-        self.listaDeCategorias![indexPath.row].toString()
+//        self.listaDeCategorias![indexPath.row].toString()
+        self.atualCategoriaIndex += 1
 
         return cell
     }
@@ -96,11 +97,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        let numeroElementos = (self.listaDeCategorias![collectionView.tag].bannersURL?.count)!
-        print("SECAO: \(section)")
-        print("Numero de elementos por secao: \(numeroElementos)")
-
-        return numeroElementos
+        return self.atualCategoriaIndex
     }
     
     
@@ -108,7 +105,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
-        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
+        let listaBannersCategoria = self.listaDeCategorias![self.atualCategoriaIndex]
         for banner in listaBannersCategoria.bannersURL! {
             collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
         }
