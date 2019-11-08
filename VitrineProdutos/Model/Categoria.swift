@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class Categoria{
     
     var nome: String?
-    var bannersURL: [String]?    
+    var bannersURL: [String]?
     
     //construtor - init
     init(nome: String?, bannersURL: [String]?) {
         self.nome = nome
         self.bannersURL = bannersURL
     }
+    
     
     
     //default init - sem parametros
