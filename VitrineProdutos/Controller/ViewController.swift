@@ -33,7 +33,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.delegate = self
         
         
-        //pega a referencia do banco de dados 
+        //pega a referencia do banco de dados
         self.ref = Database.database().reference()
         
         
