@@ -10,6 +10,7 @@ import Foundation
 
 class Categorie{
     
+    
     var name: String?
     var shows: [Show]?
     

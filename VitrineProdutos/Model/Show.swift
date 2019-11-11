@@ -22,12 +22,13 @@ class Show {
     init() {}
     
     
-    
-    
-    
-    
-    
-    
-    
+    //init with parameters
+    init(id: String?,imageUrl: String?, startDate: Date?, endDate: Date?, showHouse: ShowHouse?){
+        self.id = id
+        self.imageUrl = imageUrl
+        self.startDate = startDate
+        self.endDate = endDate
+        self.showHouse = showHouse
+    }
     
 }
