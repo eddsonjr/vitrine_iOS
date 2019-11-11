@@ -33,7 +33,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.delegate = self
         
         
-        //Somente para testes - Setando os valores de categoria - SALVANDO DADOS NO FIREBASE
+        //pega a referencia do banco de dados 
         self.ref = Database.database().reference()
         
         
@@ -66,10 +66,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         cell.collectionView.delegate = self
         cell.collectionView.dataSource = self
-        cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
-//        self.listaDeCategorias![indexPath.row].toString()
-        //self.atualCategoriaIndex += 1
+        self.atualCategoriaIndex = indexPath.section
 
         return cell
     }
@@ -97,7 +95,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //MARK: collectionView datasource and delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return (self.listaDeCategorias![section].bannersURL?.count)!
+        return (self.listaDeCategorias![self.atualCategoriaIndex].bannersURL?.count)!
     }
     
     
@@ -105,11 +103,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
-        let listaBannersCategoria = self.listaDeCategorias![indexPath.row]
-        for banner in listaBannersCategoria.bannersURL! {
-            collectionCell.imageView.loadImageUsingCache(withUrlString: banner)
-        }
         
+        collectionCell.imageView.loadImageUsingCache(withUrlString: self.listaDeCategorias![self.atualCategoriaIndex].bannersURL![indexPath.row])
         
         
         return collectionCell
@@ -117,26 +112,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     
-    //Funcao somente para testes()
-    func saveDataOnDataBase(){
-        var categoriaMusical = Categoria()
-        var categoriaRock = Categoria()
-        
-        
-        categoriaMusical.nome = "Musicais"
-        categoriaMusical.bannersURL = ["https://www.panicposters.com/media/catalog/product/cache/1/image/600x887.57396449704/9df78eab33525d08d6e5fb8d27136e95/f/i/file_25_4.jpg",
-            "https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg"]
-        
-        
-        categoriaRock.nome = "Rock"
-        categoriaRock.bannersURL = ["https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
-        
-        
-        //salvando no banco
-        DAO.saveFIRData(categoria: categoriaMusical,ref: self.ref)
-        DAO.saveFIRData(categoria: categoriaRock,ref: self.ref)
-        
-        
-    }
+//    //Funcao somente para testes() - Carga do banco de dados
+//    func saveDataOnDataBase(){
+//        var categoriaMusical = Categoria()
+//        var categoriaRock = Categoria()
+//
+//
+//        categoriaMusical.nome = "Musicais"
+//        categoriaMusical.bannersURL = ["https://www.panicposters.com/media/catalog/product/cache/1/image/600x887.57396449704/9df78eab33525d08d6e5fb8d27136e95/f/i/file_25_4.jpg",
+//            "https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg"]
+//
+//
+//        categoriaRock.nome = "Rock"
+//        categoriaRock.bannersURL = ["https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
+//
+//
+//        //salvando no banco
+//        DAO.saveFIRData(categoria: categoriaMusical,ref: self.ref)
+//        DAO.saveFIRData(categoria: categoriaRock,ref: self.ref)
+//
+//
+//    }
 }
 
