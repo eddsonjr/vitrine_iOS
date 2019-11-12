@@ -33,9 +33,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
 //        //Acessando o banco de dados via web e extraindo os dados
-//        self.DAO.retrieveData(collectionName: "categories") { (listOfCategories) in
-//            print("SOMENTE TESTANDO....")
-//        }
+        self.DAO.retrieveData(collectionName: "categories") { (listOfCategories) in
+            print("SOMENTE TESTANDO....")
+        }
         
     }
 

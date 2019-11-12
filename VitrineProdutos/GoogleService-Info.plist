@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.edsonjr.iOSVitrineTest</string>
+	<string>com.EdsonJr.VitrineProdutos</string>
 	<key>PROJECT_ID</key>
 	<string>iosvitrinetest</string>
 	<key>STORAGE_BUCKET</key>
