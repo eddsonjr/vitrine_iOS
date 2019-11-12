@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-import UIKit
 import FirebaseFirestore
 
 
@@ -32,6 +31,7 @@ class FirebaseDAO {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
+                
                 }
                 DispatchQueue.main.async {
                     completionHandler(listOfData!)
