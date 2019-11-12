@@ -58,3 +58,9 @@ https://stackoverflow.com/questions/51354429/collectionview-in-tableview-cell-sw
 
 
 
+
+#Firestore tutorials
+https://code.tutsplus.com/tutorials/how-to-use-firebase-firestore-in-an-ios-app--cms-32216
+
+
+

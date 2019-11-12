@@ -27,28 +27,19 @@ class FirebaseDAO {
         self.firestoreDB.collection("tasks").getDocuments() { (querySnapshot, error) in
             if let error = error {
                 print(self.TAG + "Error getting documents: \(error)")
-                completionHandler(listOfData!)
+                DispatchQueue.main.async {
+                    completionHandler(listOfData!)
+                }
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    
                 }
-                completionHandler(listOfData!)
+                DispatchQueue.main.async {
+                    completionHandler(listOfData!)
+                }
             }
-        }
-        
-        
+        }        
     }
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
 
     
 }

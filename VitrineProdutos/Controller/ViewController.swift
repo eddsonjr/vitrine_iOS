@@ -16,10 +16,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var tableView: UITableView!
     
     
-    //SOMENTE PARA TESTE - DAO
-    var ref = DatabaseReference.init()
+    //Referencia ao Dao
     var DAO: FirebaseDAO = FirebaseDAO()
-    
     var listaDeCategorias: Array<Categorie>? = []
     
     var atualCategoriaIndex = 0
@@ -33,10 +31,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.delegate = self
         
         
-        //pega a referencia do banco de dados
-        self.ref = Database.database().reference()
         
-        
+        //Acessando o banco de dados via web e extraindo os dados
+        self.DAO.retrieveData(collectionName: "categories") { (listOfCategories) in
+            print("SOMENTE TESTANDO....")
+        }
         
     }
 
