@@ -19,7 +19,6 @@ class FirebaseDAO {
     let firestoreDB = Firestore.firestore()
     
     
-    
     //Retrieve data from Firestore
     func retrieveData(collectionName: String!,completionHandler: @escaping ([Categorie?])->()){
         
