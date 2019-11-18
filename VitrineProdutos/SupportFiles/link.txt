@@ -63,4 +63,5 @@ https://stackoverflow.com/questions/51354429/collectionview-in-tableview-cell-sw
 https://code.tutsplus.com/tutorials/how-to-use-firebase-firestore-in-an-ios-app--cms-32216
 
 
-
+https://proandroiddev.com/working-with-firestore-building-a-simple-database-model-79a5ce2692cb
+https://firebase.google.com/docs/firestore/data-model

@@ -32,11 +32,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         
-       //Acessando o banco de dados via web e extraindo os dados
-        self.DAO.retrieveData(collectionName: "categories") { (listOfCategories) in
-            print("SOMENTE TESTANDO....")
-        }
+//       //Acessando o banco de dados via web e extraindo os dados
+//        self.DAO.retrieveData(collectionName: "categorieList") { (listOfCategories) in
+//            print("SOMENTE TESTANDO....")
+//        }
         
+        let categorie = Categorie(id: "categorie_romantic",name: "Musicas Romanticas", shows: nil)
+        self.DAO.retrieveData(collectionName: "categories") {(categoriasLista)  in
+            print("TERMINADO DE BAIXAR")
+        }
     }
 
     override func didReceiveMemoryWarning() {

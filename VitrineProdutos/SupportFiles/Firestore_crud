@@ -1,0 +1,84 @@
+
+See: http://iosrevisited.blogspot.co.uk/2017/10/firebase-cloud-firestore-example-project-swift.html
+
+01. Set up Firebase Cloud Firestore To iOS Project :
+pod 'Firebase/Core'
+pod 'Firebase/Firestore'
+
+02. Add google plist to project
+
+03. Initialize Firebase in AppDelegate.
+import Firebase
+
+04. In the application:didFinishLaunchingWithOptions: method, initialize the FirebaseApp object:
+FirebaseApp.configure()
+
+05. Add the following code to your VC:
+var docRef : DocumentReference!
+
+06. Add the following code in viewDidLoad() method, where "friends" is the collection and "profile" is the document.
+Note, every document needs a different name or it gets overwritten
+docRef = Firestore.firestore().document("friends/profile")
+
+07. Saving/Adding data to Cloud Firestore:
+Using docRef.setData(dataToSave), you do NOT create an AutoId
+
+Add the following code in save button action method:
+
+@IBAction func saveButtonTapped(_ sender: UIButton) {
+guard let name = nameField.text, !name.isEmpty else { return }
+guard let profession = professionField.text, !profession.isEmpty else { return }
+
+let dataToSave : [String: Any] = ["name": name, "profession": profession]
+docRef.setData(dataToSave) { (error) in
+if let error = error {
+print("Oh no! Some error \(error.localizedDescription)")
+}else {
+print("Data has been saved")
+}
+}
+}
+
+08. Fetching/Getting data From Cloud Firestore:
+Add the following code inside fetch button action method:
+
+@IBAction func fetchButtonTapped(_ sender: Any) {
+docRef.getDocument { (docSnapshot, error) in
+guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
+let data = docSnapshot.data()
+let name = data["name"] as? String ?? ""
+let profession = data["profession"] as? String ?? ""
+self.titleLabel.text = "\(name) is a \(profession)"
+}
+}
+
+09.Listening for RealTime in Cloud Firestore:
+First add the following listener property.
+
+var dataListener : FIRListenerRegistration!
+
+10. Next add the viewWillAppear() method as following:
+override func viewWillAppear(_ animated: Bool) {
+super.viewWillAppear(animated)
+dataListener =  docRef.addSnapshotListener { (docSnapshot, error) in
+guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
+let data = docSnapshot.data()
+let name = data["name"] as? String ?? ""
+let profession = data["profession"] as? String ?? ""
+self.titleLabel.text = "\(name) is a \(profession)"
+}
+}
+
+11. Above listener will keep on calling every time the data changes. So we need to remove the observer on viewWillDisappear. So that we can avoid memory problems.
+
+Add the following method:
+override func viewWillDisappear(_ animated: Bool) {
+super.viewWillDisappear(animated)
+dataListener.remove()
+}
+
+12. Next step is update data in real time. Now add some text in text field then tap save button.
+On saving only we can see the title changes in real time without fetch action.
+
+
+

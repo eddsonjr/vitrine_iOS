@@ -43,3 +43,92 @@ DispatchQueue.main.async {
 completionHandler(categoriaList)
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------
+# codigos basicos de manipulacao do firestore
+----------------------------
+
+
+
+//    //Retrieve data from Firestore
+//    func retrieveDataOld(collectionName: String!,completionHandler: @escaping ([Categorie?])->()){
+//
+//        var listOfData: Array<Categorie>? = []
+//        self.firestoreDB.collection(collectionName).getDocuments() { (querySnapshot, error) in
+//            if let error = error {
+//                print(self.TAG + "Error getting documents: \(error)")
+//                DispatchQueue.main.async {
+//                    completionHandler(listOfData!)
+//                }
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+//
+//
+//                }
+//                DispatchQueue.main.async {
+//                    completionHandler(listOfData!)
+//                }
+//            }
+//        }
+//    }
+
+--------
+
+
+
+
+
+
+--------------------------------
+adicionando dados no firestore
+--------------------------------
+
+//Versao 1
+func addCategorie(categorie: Categorie){
+    let dict: [String : Any] = ["nome" : categorie.name]
+    self.firestoreDB.collection("categorie").addDocument(data: dict)
+}
+//A versao acima e simplista e nao permite voce estabelecer em qual documento os dados serao criados.
+//ela tambem nao serve para voce criar um documento com um id especifico, deixando a cargo do firestore cria-lo para voce
+
+
+
+
+
+//Versao 2
+func addCategorie(categorie: Categorie){
+    let dict: [String : Any] = ["nome" : categorie.name]
+    //criando um id para o documento com base no nome da categoria
+    let documentID = String(categorie.name! + "-doc")
+    self.firestoreDB.collection("categorie").document(documentID).setData(dict)
+}
+
+//Ja nesta versao voce consegue especificar o id que voce quer na hora de criar um documento.
+
+
+
+
+
+---------------------
+removendo um documento
+----------------------
+
+func removeCategorie(categorie:Categorie){
+    self.firestoreDB.collection("categorie").document(categorie.id!).delete()
+}
+
+
+
+

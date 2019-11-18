@@ -10,7 +10,7 @@ import Foundation
 
 class Categorie{
     
-    
+    var id: String?
     var name: String?
     var shows: [Show]?
     
@@ -20,7 +20,8 @@ class Categorie{
     
     
     //init com parametros
-    init(name: String?,shows:[Show]?){
+    init(id: String?, name: String?,shows:[Show]?){
+        self.id = id
         self.name = name
         self.shows = shows
     }

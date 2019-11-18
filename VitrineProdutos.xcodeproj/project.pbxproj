@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		373AD0D2E66CCD8FE8320D10 /* Pods_VitrineProdutos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F598D3867031A9089E506F80 /* Pods_VitrineProdutos.framework */; };
+		AD402F64237CD1A100B2F0E1 /* Firestore_crud in Resources */ = {isa = PBXBuildFile; fileRef = AD402F63237CD1A100B2F0E1 /* Firestore_crud */; };
 		AD9F37DB23554D1C00CF14E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F37DA23554D1C00CF14E9 /* AppDelegate.swift */; };
 		AD9F37DD23554D1C00CF14E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F37DC23554D1C00CF14E9 /* ViewController.swift */; };
 		AD9F37E023554D1C00CF14E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F37DE23554D1C00CF14E9 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		64554031070AF8B55E2513AF /* Pods-VitrineProdutos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitrineProdutos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos.debug.xcconfig"; sourceTree = "<group>"; };
 		987543AB6A687F8D62DE63DC /* Pods-VitrineProdutos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitrineProdutos.release.xcconfig"; path = "Pods/Target Support Files/Pods-VitrineProdutos/Pods-VitrineProdutos.release.xcconfig"; sourceTree = "<group>"; };
+		AD402F63237CD1A100B2F0E1 /* Firestore_crud */ = {isa = PBXFileReference; lastKnownFileType = text; path = Firestore_crud; sourceTree = "<group>"; };
 		AD9F37D723554D1C00CF14E9 /* VitrineProdutos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitrineProdutos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9F37DA23554D1C00CF14E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD9F37DC23554D1C00CF14E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				ADBB1E9723555A460009E11D /* link.txt */,
 				ADA44844236A2EFC00C49A67 /* JsonTest */,
 				ADF7D5482370EE240009B790 /* some_codes */,
+				AD402F63237CD1A100B2F0E1 /* Firestore_crud */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				AD9F37E523554D1D00CF14E9 /* LaunchScreen.storyboard in Resources */,
 				ADA44845236A2EFC00C49A67 /* JsonTest in Resources */,
 				AD9F37E223554D1D00CF14E9 /* Assets.xcassets in Resources */,
+				AD402F64237CD1A100B2F0E1 /* Firestore_crud in Resources */,
 				AD9F37E023554D1C00CF14E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
