@@ -26,27 +26,77 @@ class FirebaseDAO {
     //Esta funcao faz a conexao com o firestore e baixa os dados de acordo com o nome da colecao passada para a funcao.
     //jeito de acessar: defaultStore?.collection("Category").document("Film").collection("firstFilm").getDocuments();
     func retrieveData(collectionName: String!,completionHandler: @escaping ([Any?]) -> ()) {
-        var listOfData: Array<Any>? = []
-        //self.firestoreDB.collection(collectionName).getDocuments() { (querySnapshot,error) in
+        var listOfData: Array<Categorie>? = []
         self.firestoreDB.collection(collectionName).getDocuments { (querySnapshot,error) in
             if let error = error {
                 print(self.TAG + "Error getting documents: \(error)")
             }
             else {
                 for document in querySnapshot!.documents {
-                    let data = document.data()
-                    print(data)
                     
+                    var categorie: Categorie = Categorie()
                     
+                    let nameOfCategory = document.data()["name"] as! String
+                    let listOfShowsID = document.data()["showsID"] as! [String]
+                    
+                    print(self.TAG + "Nome da categoria: \(nameOfCategory)")
+                    print(self.TAG + "Lista de shows nessa categoria: \(listOfShowsID.count)")
+                    
+                    self.getShows(listOfShowsID: listOfShowsID, completionHandler: { (showList) in
+                        print(self.TAG + "Baixando dados dos shows")
+                        categorie.name = nameOfCategory
+                        categorie.shows = showList
+                        listOfData?.append(categorie)
+                        
+                    })
                 }
                 
-            }
+//                DispatchQueue.main.async {
+//                    completionHandler(listOfData!)
+//                }
+                
+                }
             
-            DispatchQueue.main.async {
-                completionHandler(listOfData!)
+            print(self.TAG + "shows baixados: \(listOfData?.count)")
+            
             }
+        
+        
+       
+        
+            
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    func getShows(listOfShowsID:[String],completionHandler: @escaping ([Show]) -> ()){
+        
+        
+        var listOfShows: [Show]? = []
+        
+        for show in listOfShowsID {
+            let path = "/shows/"+show
+            let showDocument = self.firestoreDB.document(path)
+            
+            showDocument.getDocument(completion: { (querySnapshot, error) in
+                let showDataImgUlr = querySnapshot?.data()!["imgUrl"] as! String
+                print(self.TAG + "url de imagem deste show: \(showDataImgUlr)")
+                let show: Show = Show()
+                show.imageUrl = showDataImgUlr
+                listOfShows?.append(show)
+            })
+            
         }
         
+        DispatchQueue.main.async {
+            completionHandler(listOfShows!)
+        }
     }
     
     
