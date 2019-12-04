@@ -10,5 +10,6 @@ target 'VitrineProdutos' do
   pod 'Firebase/Database'
   pod 'Firebase/Core' 
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
 end

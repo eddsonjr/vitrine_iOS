@@ -13,8 +13,8 @@ class Show {
     
     var id: String?
     var imageUrl: String?
-    var startDate: Date?
-    var endDate: Date?
+    var startDate: String?
+    var endDate: String?
     var showHouse: ShowHouse?
     
     
@@ -23,7 +23,7 @@ class Show {
     
     
     //init with parameters
-    init(id: String?,imageUrl: String?, startDate: Date?, endDate: Date?, showHouse: ShowHouse?){
+    init(id: String?,imageUrl: String?, startDate: String?, endDate: String?, showHouse: ShowHouse?){
         self.id = id
         self.imageUrl = imageUrl
         self.startDate = startDate

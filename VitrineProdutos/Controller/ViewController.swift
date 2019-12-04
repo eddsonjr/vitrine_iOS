@@ -17,8 +17,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     //Referencia ao Dao
-    var DAO: FirebaseDAO = FirebaseDAO()
+    var service: FirebaseServices = FirebaseServices()
+    var dao: FirebaseDAO = FirebaseDAO()
     var listaDeCategorias: Array<Categorie>? = []
+    var ref = DatabaseReference.init()
     
     var atualCategoriaIndex = 0
     
@@ -31,16 +33,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.delegate = self
         
         
-        
-//       //Acessando o banco de dados via web e extraindo os dados
-//        self.DAO.retrieveData(collectionName: "categorieList") { (listOfCategories) in
-//            print("SOMENTE TESTANDO....")
-//        }
-        
-        let categorie = Categorie(id: "categorie_romantic",name: "Musicas Romanticas", shows: nil)
-        self.DAO.retrieveData(collectionName: "categories") {(categoriasLista)  in
-            print("TERMINADO DE BAIXAR")
+        self.service.retrieveAllData{ (categorieList) in
+            print("Terminado de baixar.... ")
+            print("Encontrado \(categorieList.count)")
+
         }
+        
+      
+        
     }
 
     override func didReceiveMemoryWarning() {
