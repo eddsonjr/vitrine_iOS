@@ -20,7 +20,30 @@ class FirebaseServices {
     
     
     
-    func retrieveAllCategoriesData(completionHandler: @escaping ([Any?]) -> ()){
+    func retrieveAllShowsInCategorie(documentRef:CollectionReference, completionHandler: @escaping ([Any?]) -> ()){
+        var listOfData: [Show] = []
+        documentRef.getDocuments(){ (innerSpanshot,error) in
+            if let error = error {
+                print(self.TAG + "Erro ao adiqurir documentos dos shows...: \(error)")
+            }else{
+                for document in (innerSpanshot?.documents)! {
+                    print(self.TAG + "Pegando os shows dentro da categoria...")
+                    print(self.TAG + "Doc: \(document.documentID) => \(document.data())")
+                    var s: Show = Show()
+                    s.id = document.documentID
+                    
+                    listOfData.append(s)
+                }
+            }
+            DispatchQueue.main.async {
+                completionHandler(listOfData)
+            }
+            
+        }
+    }
+    
+    
+    func retrieveAllCategories(completionHandler: @escaping ([Any?]) -> ()){
         var listOfData: [Categorie] = []
         self.firestoreDB.collection("categories").getDocuments() { (querySnapshot, error) in
             if let error = error {
@@ -35,20 +58,12 @@ class FirebaseServices {
                     
                     
                     let showsInsideCategorieRef = self.firestoreDB.collection("categories").document(document.documentID).collection("showTest")
-                
-                    showsInsideCategorieRef.getDocuments(){ (innerSpanshot,error) in
-                        if let error = error {
-                            print(self.TAG + "Erro ao adiqurir documentos da categoria...: \(error)")
-                        }else{
-                            for document in (innerSpanshot?.documents)! {
-                                print(self.TAG + "Pegando o show dentro da categoria...")
-                                print(self.TAG + "Doc: \(document.documentID) => \(document.data())")
-                            }
-                        }
-                        
-                        
+                    
+                    
+                    self.retrieveAllShowsInCategorie(documentRef: showsInsideCategorieRef) {(shows) in
+                        print(shows.count)
+                        categorie.shows = shows as! [Show]
                     }
-                   
                     
                     
                     listOfData.append(categorie)
