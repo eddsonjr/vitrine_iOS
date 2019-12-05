@@ -132,3 +132,49 @@ func removeCategorie(categorie:Categorie){
 
 
 
+-----------
+
+
+
+
+func retrieveSnapshotsDocuments(collectionName: String,completionHandler:   @escaping ([DocumentSnapshot?]) -> ())  {
+print(self.TAG + "Getting document snapshtos...")
+var documents: [DocumentSnapshot] = []
+self.firestoreDB.collection(collectionName).getDocuments{ (querySnapshot,error) in
+if let error = error {
+print(self.TAG + "Error getting documents snapshots: \(error)")
+}else {
+documents = (querySnapshot?.documents)!
+}
+}
+DispatchQueue.main.async {
+print(self.TAG + "Retornando com a lista de categorias")
+completionHandler(documents)
+}
+
+}
+
+
+
+
+
+func retrieveAllCategories(completionHandler: @escaping ([Any?]) -> ()){
+
+var listOfCategories: [Categorie] = []
+self.retrieveSnapshotsDocuments(collectionName: "categories") { (listDocuments) in
+
+for document in listDocuments{
+var categorie: Categorie = Categorie()
+let nameOfCategory = document?.data()!["name"] as! String
+listOfCategories.append(categorie)
+}
+}
+DispatchQueue.main.async {
+print(self.TAG + "Retornando com a lista de categorias")
+completionHandler(listOfCategories)
+}
+
+}
+
+
+

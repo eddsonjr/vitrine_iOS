@@ -33,7 +33,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.delegate = self
         
         
-        self.service.retrieveAllData{ (categorieList) in
+        self.service.retrieveAllCategoriesData{ (categorieList) in
             print("Terminado de baixar.... ")
             print("Encontrado \(categorieList.count)")
 

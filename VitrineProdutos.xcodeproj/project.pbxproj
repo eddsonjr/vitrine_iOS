@@ -115,7 +115,6 @@
 		ADA44840236A2C2000C49A67 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				ADA44842236A2C4C00C49A67 /* FirebaseDAO_old.swift */,
 				AD7D609C2395E26A00B093A5 /* FirebaseServices.swift */,
 			);
 			path = Services;
@@ -162,6 +161,7 @@
 		ADBB1E9623555A1E0009E11D /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				ADA44842236A2C4C00C49A67 /* FirebaseDAO_old.swift */,
 				ADBB1E9723555A460009E11D /* link.txt */,
 				ADA44844236A2EFC00C49A67 /* JsonTest */,
 				ADF7D5482370EE240009B790 /* some_codes */,

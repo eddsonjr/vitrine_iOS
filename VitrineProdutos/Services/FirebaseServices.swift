@@ -20,58 +20,48 @@ class FirebaseServices {
     
     
     
-    func retrieveSnapshotsDocuments(collectionName: String) -> [DocumentSnapshot] {
-        print(self.TAG + "Getting document snapshtos...")
-        var documents: [DocumentSnapshot] = []
-        self.firestoreDB.collection(collectionName).getDocuments{ (querySnapshot,error) in
-            if let error = error {
-                print(self.TAG + "Error getting documents snapshots: \(error)")
-            }else {
-                documents = (querySnapshot?.documents)!
-            }
-        }
-        return documents
-    }
-    
-    
-    
-    
-    
-    func retrieveAllCategories(completionHandler: @escaping ([Any?]) -> ()){
-        //pegando os documentos atraves da funcao retrieveSnapshotsDocuments
-        var listDocuments = retrieveSnapshotsDocuments(collectionName: "categories")
-        var listOfCategories: [Categorie] = []
-        
-        for document in listDocuments{
-            var categorie: Categorie = Categorie()
-            let nameOfCategory = document.data()!["name"] as! String
-            listOfCategories.append(categorie)
-        }
-        DispatchQueue.main.async {
-            print(self.TAG + "Retornando com a lista de categorias")
-            completionHandler(listOfCategories)
-        }
-    }
-    
-    
-    
-    
-    
-    func retrieveAllData(completionHandler: @escaping ([Any?]) -> ()){
+    func retrieveAllCategoriesData(completionHandler: @escaping ([Any?]) -> ()){
         var listOfData: [Categorie] = []
-        self.firestoreDB.collection("categorie").getDocuments() { (querySnapshot, error) in
+        self.firestoreDB.collection("categories").getDocuments() { (querySnapshot, error) in
             if let error = error {
-                print(self.TAG + "Error getting documents: \(error)")
+                print(self.TAG + "Erro ao adiqurir documentos da categoria...: \(error)")
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
+                    var categorie: Categorie = Categorie()
+                    categorie.id = document.documentID
+                    categorie.name = document["categorieName"] as! String
+                
+                    
+                    
+                    let showsInsideCategorieRef = self.firestoreDB.collection("categories").document(document.documentID).collection("showTest")
+                
+                    showsInsideCategorieRef.getDocuments(){ (innerSpanshot,error) in
+                        if let error = error {
+                            print(self.TAG + "Erro ao adiqurir documentos da categoria...: \(error)")
+                        }else{
+                            for document in (innerSpanshot?.documents)! {
+                                print(self.TAG + "Pegando o show dentro da categoria...")
+                                print(self.TAG + "Doc: \(document.documentID) => \(document.data())")
+                            }
+                        }
+                        
+                        
+                    }
+                   
+                    
+                    
+                    listOfData.append(categorie)
                     
                 }
-                DispatchQueue.main.async {
-                    completionHandler(listOfData)
-                }
+                
             }
+            DispatchQueue.main.async {
+                completionHandler(listOfData)
+            }
+           
         }
+       
         
         
     }
