@@ -1,0 +1,134 @@
+
+//Categoria de Musicais
+//        categoriaMusicais.nome = "Musicais"
+//        categoriaMusicais.bannersURL = ["https://www.panicposters.com/media/catalog/product/cache/1/image/600x887.57396449704/9df78eab33525d08d6e5fb8d27136e95/f/i/file_25_4.jpg",
+//                                    "https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg"]
+//
+//        DAO.saveFIRData(categoria: self.categoriaMusicais,ref: self.ref)
+//
+//
+//        //Categoria de rock
+//        categoriaRock.nome = "Rock"
+//        categoriaRock.bannersURL = ["https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg"]
+//
+//
+//       DAO.saveFIRData(categoria: self.categoriaRock,ref: self.ref)
+
+
+
+
+
+
+---------------------
+
+
+//Realizando a codificacao de json to object
+if let arrayData = snapshot.value as? [[String: Any]] {
+for valueInArray in arrayData {
+let categoriaNome = valueInArray["NomeCategoria"] as! String ?? nil
+let bannersUrls = valueInArray["bannersURLs"] as! [String] ?? nil
+
+//Somente cria um objeto do tipo categoria se o nome e a lista de banners nao for null
+if((categoriaNome != nil) && (bannersUrls != nil)) {
+
+//Criando um objeto com os dados retornados do banco de dados
+var categoria = Categoria(nome: categoriaNome, bannersURL: bannersUrls)
+
+//adicionando o objeto a lista de categorias
+categoriaList?.append(categoria)
+
+}
+}
+DispatchQueue.main.async {
+completionHandler(categoriaList)
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------
+# codigos basicos de manipulacao do firestore
+----------------------------
+
+
+
+//    //Retrieve data from Firestore
+//    func retrieveDataOld(collectionName: String!,completionHandler: @escaping ([Categorie?])->()){
+//
+//        var listOfData: Array<Categorie>? = []
+//        self.firestoreDB.collection(collectionName).getDocuments() { (querySnapshot, error) in
+//            if let error = error {
+//                print(self.TAG + "Error getting documents: \(error)")
+//                DispatchQueue.main.async {
+//                    completionHandler(listOfData!)
+//                }
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+//
+//
+//                }
+//                DispatchQueue.main.async {
+//                    completionHandler(listOfData!)
+//                }
+//            }
+//        }
+//    }
+
+--------
+
+
+
+
+
+
+--------------------------------
+adicionando dados no firestore
+--------------------------------
+
+//Versao 1
+func addCategorie(categorie: Categorie){
+    let dict: [String : Any] = ["nome" : categorie.name]
+    self.firestoreDB.collection("categorie").addDocument(data: dict)
+}
+//A versao acima e simplista e nao permite voce estabelecer em qual documento os dados serao criados.
+//ela tambem nao serve para voce criar um documento com um id especifico, deixando a cargo do firestore cria-lo para voce
+
+
+
+
+
+//Versao 2
+func addCategorie(categorie: Categorie){
+    let dict: [String : Any] = ["nome" : categorie.name]
+    //criando um id para o documento com base no nome da categoria
+    let documentID = String(categorie.name! + "-doc")
+    self.firestoreDB.collection("categorie").document(documentID).setData(dict)
+}
+
+//Ja nesta versao voce consegue especificar o id que voce quer na hora de criar um documento.
+
+
+
+
+
+---------------------
+removendo um documento
+----------------------
+
+func removeCategorie(categorie:Categorie){
+    self.firestoreDB.collection("categorie").document(categorie.id!).delete()
+}
+
+
+
+

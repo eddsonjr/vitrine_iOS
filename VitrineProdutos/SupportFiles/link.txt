@@ -1,0 +1,67 @@
+banner scorpions:
+https://s3.amazonaws.com/jgdprod-blogs-us/blogs/wp-content/uploads/sites/116/2016/08/banner-geral-redes-trocas-inicio.jpg
+
+
+banner bee gees:
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3YxwSIQlm59oz1Pu6woGkMSLbDl1wh9rzG4FbWZumpxqiq53ZkA
+
+
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPS0gaf8N3FfHGa1edqNNHwzSz7iqwLHk5ZNHr-up7pjywQSPq
+
+
+banner red hot:
+https://up-1.cdn-fullscreendirect.com/production/photos/10286/original/20161111_175956_10286_960149.jpeg
+
+
+
+banner daft punk interestellar 5555:
+https://www.panicposters.com/media/catalog/product/cache/1/image/600x887.57396449704/9df78eab33525d08d6e5fb8d27136e95/f/i/file_25_4.jpg
+
+
+
+
+banner redline:
+https://www.screenmania.fr/wp-content/uploads/2011/09/Redline-jaquette-DVD.jpg
+
+
+
+
+
+tutorial collectionView inside tableview:
+    https://www.youtube.com/watch?v=ArzE1bZssQM
+
+
+
+
+
+#Documentacao do firebase - Integracao com app e utilizacao:
+https://firebase.google.com/docs/firestore/quickstart?authuser=0
+
+https://firebase.google.com/docs/database/web/structure-data?hl=pt-BR
+https://www.tutorialspoint.com/firebase/firebase_overview.htm
+
+https://www.raywenderlich.com/3-firebase-tutorial-getting-started
+
+https://www.youtube.com/watch?v=KEubRO8VPWA
+https://stackoverflow.com/questions/53520757/parse-data-json-from-firebase-swift
+
+Autenticacao do banco:
+com.edsonjr.iOSVitrineTest - Apelido: Vitrine
+
+
+
+
+
+#Collectionview e uitableview
+https://stackoverflow.com/questions/51354429/collectionview-in-tableview-cell-swift4
+
+
+
+
+
+#Firestore tutorials
+https://code.tutsplus.com/tutorials/how-to-use-firebase-firestore-in-an-ios-app--cms-32216
+
+
+https://proandroiddev.com/working-with-firestore-building-a-simple-database-model-79a5ce2692cb
+https://firebase.google.com/docs/firestore/data-model
